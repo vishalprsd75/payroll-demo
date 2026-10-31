@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* ─── Meridian – Premium Payroll System ─────────────────────────────────────── */
+
+@theme {
+  --color-meridian-50: #f0fdfa;
+  --color-meridian-100: #ccfbf1;
+  --color-meridian-200: #99f6e4;
+  --color-meridian-300: #5eead4;
+  --color-meridian-400: #2dd4bf;
+  --color-meridian-500: #14b8a6;
+  --color-meridian-600: #0d9488;
+  --color-meridian-700: #0f766e;
+  --color-meridian-800: #115e59;
+  --color-meridian-900: #134e4a;
+  --color-meridian-950: #042f2e;
+
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* ─── Base Layer ─────────────────────────────────────────────────────────────── */
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #fafaf9;
+    color: #1c1917;
+  }
+
+  ::selection {
+    background-color: #ccfbf1;
+    color: #134e4a;
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d6d3d1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a29e;
+  }
+}
+
+/* ─── Component Utilities ────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-dark {
+    background: rgba(19, 78, 74, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.25s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ─── Print Styles ───────────────────────────────────────────────────────────── */
+
+@media print {
+  .no-print { display: none !important; }
+}
